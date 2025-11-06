@@ -16,6 +16,8 @@ namespace Activitat_1_DataGridView_mauro
             pacienteActual = paciente;
 
             dtpAlta.Enabled = false;
+
+            lblTitulo.Text = $"Ingresos del Paciente {pacienteActual.Nombre} {pacienteActual.Apellidos}";
         }
         
         private void FrmIngresos_Load(object sender, EventArgs e)
