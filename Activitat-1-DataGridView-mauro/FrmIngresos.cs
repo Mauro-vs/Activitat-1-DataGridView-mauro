@@ -17,7 +17,7 @@ namespace Activitat_1_DataGridView_mauro
 
             dtpAlta.Enabled = false;
 
-            lblTitulo.Text = $"Ingresos del Paciente {pacienteActual.Nombre} {pacienteActual.Apellidos}";
+            lblTitulo.Text = $"Ingresos del Paciente {pacienteActual.Nombre} {pacienteActual.Apellidos}"; // Actualiza el nombre del paciente en el titulo
         }
         
         private void FrmIngresos_Load(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace Activitat_1_DataGridView_mauro
         {
             if (string.IsNullOrEmpty(txtMotivo.Text) ||
                 string.IsNullOrEmpty(txtEspecialidad.Text) ||
-                string.IsNullOrEmpty(txtHabitacion.Text)) // Validar campos obligatorios
+                string.IsNullOrEmpty(txtHabitacion.Text)) // Validar campos obligatorios, el metodo string.IsNullOrEmpty verifica si una cadena es null o está vacía
             {
                 MessageBox.Show("Por favor, complete todos los campos obligatorios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
