@@ -25,7 +25,7 @@ namespace Activitat_1_DataGridView_mauro
 
             if (pacienteSelec != null)
             {
-                pacienteActual = pacienteSelec; // Asigna el paciente seleccionado a pacienteActual
+                pacienteActual = pacienteSelec; // Asigna el paciente seleccionado a pacienteActuals
 
                 txtNombre.Text = pacienteActual.Nombre; // Muestra en el TextBox el nombre del paciente seleccionado
                 txtApellido.Text = pacienteActual.Apellidos;
@@ -39,16 +39,6 @@ namespace Activitat_1_DataGridView_mauro
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = listPacientes;
 
-                // Selecciona la fila correspondiente al paciente seleccionado
-                int index = listPacientes.IndexOf(pacienteActual); // Encuentra el índice del paciente actual en la lista
-                if (index >= 0)
-                {
-                    dataGridView1.ClearSelection(); // Limpia cualquier selección previa
-                    dataGridView1.Rows[index].Selected = true; // Selecciona la fila del paciente actual
-                    dataGridView1.CurrentCell = dataGridView1.Rows[index].Cells[0]; // Establece la celda actual para que la selección sea visible
-                    // Rows -> Es para que se coloque en la linea que este el paciente seleccioando
-                    // Cells -> Es para establecer q celda esta seleccionada, en este caso es la 0
-                }
             }
             else
             {

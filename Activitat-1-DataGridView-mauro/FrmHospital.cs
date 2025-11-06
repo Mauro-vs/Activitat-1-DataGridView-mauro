@@ -10,6 +10,8 @@ namespace Activitat_1_DataGridView_mauro
         private void IngresosHospitalarios_Load(object sender, EventArgs e)
         {
         }
+
+        // Lista con datos de ejemplo
         private List<Paciente> Pacientes { get; set; } = new List<Paciente> {
             new Paciente {
                 Nombre = "Ana",
@@ -78,7 +80,7 @@ namespace Activitat_1_DataGridView_mauro
         public IngresosHospitalarios()
         {
             InitializeComponent();
-
+            
             RefrescarDatos();
         }
 
@@ -115,7 +117,7 @@ namespace Activitat_1_DataGridView_mauro
         {
             if (dataGridView1.CurrentRow != null)
             {
-                // Obtiene el objeto Paciente que está vinculado a la fila actualmente seleccionada en el DataGridView
+                // Recoge el paciente seleccionado en el DataGridView
                 var pacienteSelec = dataGridView1.CurrentRow.DataBoundItem as Paciente;
 
                 if (pacienteSelec != null)
@@ -158,7 +160,7 @@ namespace Activitat_1_DataGridView_mauro
         {
             if (dataGridView1.CurrentRow != null)
             {
-                // Obtiene el objeto Paciente que está vinculado a la fila actualmente seleccionada en el DataGridView
+                // Recoge el paciente seleccionado en el DataGridView
                 var pacienteSelec = dataGridView1.CurrentRow.DataBoundItem as Paciente;
 
                 if (pacienteSelec != null)
@@ -183,6 +185,7 @@ namespace Activitat_1_DataGridView_mauro
         {
             if (dataGridView1.CurrentRow.DataBoundItem != null)
             {
+                // Crea la variable pacienteSelec y se lo pasa a FrmPaciente para editarlo
                 Paciente pacienteSelec = (Paciente)dataGridView1.CurrentRow.DataBoundItem;
                 if (pacienteSelec != null)
                 {
@@ -206,10 +209,6 @@ namespace Activitat_1_DataGridView_mauro
                     var frm = new FrmIngresos(pacienteSelec, null);
                     frm.ShowDialog();
                 }
-                else
-                {
-                    MessageBox.Show("Seleccione un paciente válido para ver sus ingresos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             else
             {
@@ -225,8 +224,8 @@ namespace Activitat_1_DataGridView_mauro
         {
             if (dataGridView1.CurrentRow != null)
             {
-                // "CurrentRow" representa la fila seleccionada por el usuario.
-                // "DataBoundItem" es el objeto original (en este caso, un Paciente) que está enlazado a esa fila.
+                // "CurrentRow" es la fila seleccionada por el usuario.
+                // "DataBoundItem" es el objeto original que está enlazado a esa fila.
                 var pacienteSelec = (Paciente)dataGridView1.CurrentRow.DataBoundItem;
                 if (pacienteSelec != null)
                 {
