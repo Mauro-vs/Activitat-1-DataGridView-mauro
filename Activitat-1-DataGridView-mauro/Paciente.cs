@@ -16,10 +16,10 @@ namespace Activitat_1_DataGridView_mauro
             public int Edad { get; set; }
             public List<Ingreso> Ingresos { get; set; } = new List<Ingreso>();
 
-            public Paciente()
-            {
-                contadorId++;
-                Id = contadorId;
+            public Paciente() // Constructor
+        {
+                contadorId++; // Incrementa el contador estático cada vez que se crea un nuevo Paciente
+            Id = contadorId;
             }
     }
     }
